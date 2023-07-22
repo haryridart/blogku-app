@@ -20,7 +20,7 @@ public class CommentController {
     private CommentService commentService;
     @ApiOperation(value = "Create Comment REST API")
     @PostMapping("/post/{postId}")
-    public ResponseEntity<CommentDto> crateComment(@PathVariable("postId") Integer postId,
+    public ResponseEntity<CommentDto> createComment(@PathVariable("postId") Integer postId,
                                                    @RequestBody CommentDto commentDto){
         return new ResponseEntity<>(commentService.createComment(postId,commentDto), HttpStatus.CREATED);
     }
